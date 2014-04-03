@@ -4,10 +4,18 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     jasmine : {
-      src : 'src/**/*.js',
-      options : {
-        specs : 'spec/**/*.js',
-        keepRunner: true
+      appName: {
+        src : 'src/**/*.js',
+        options : {
+          vendor: [
+            './lib/jquery-1.11.0.js',
+            './lib/underscore.js',
+            './lib/backbone.js',
+            './lib/backbone.marionette.js',
+          ],
+          specs : 'spec/**/*.js',
+          keepRunner: true
+        }
       }
     },
     jshint: {
@@ -23,6 +31,7 @@ module.exports = function(grunt) {
     watch: {
       scripts: {
         files: ['Gruntfile.js','./src/*.js','./spec/*.js'],
+        template: 'spec/TestRunner.tmpl',
         tasks: ['jshint', 'jasmine'],
         options: {
           nospawn: true
