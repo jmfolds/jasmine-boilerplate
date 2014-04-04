@@ -1,7 +1,6 @@
-// 'use strict';
+'use strict';
 
 /*globals vw*/
-// var $this = this;
 
 describe("App", function() {
   var app;
