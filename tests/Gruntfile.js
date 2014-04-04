@@ -5,13 +5,13 @@ module.exports = function(grunt) {
   grunt.initConfig({
     jasmine : {
       appName: {
-        src : 'src/**/*.js',
+        src : '../src/**/*.js',
         options : {
           vendor: [
-            './lib/jquery-1.11.0.js',
-            './lib/underscore.js',
-            './lib/backbone.js',
-            './lib/backbone.marionette.js',
+            '../lib/jquery-1.11.0.js',
+            '../lib/underscore.js',
+            '../lib/backbone.js',
+            '../lib/backbone.marionette.js',
           ],
           specs : 'spec/**/*.js',
           keepRunner: true
@@ -21,7 +21,7 @@ module.exports = function(grunt) {
     jshint: {
       all: [
         'Gruntfile.js',
-        'src/**/*.js',
+        '../src/**/*.js',
         'spec/**/*.js'
       ],
       options: {
@@ -30,7 +30,7 @@ module.exports = function(grunt) {
     },
     watch: {
       scripts: {
-        files: ['Gruntfile.js','./src/*.js','./spec/*.js'],
+        files: ['Gruntfile.js','../src/*.js','spec/*.js'],
         template: 'spec/TestRunner.tmpl',
         tasks: ['jshint', 'jasmine'],
         options: {
